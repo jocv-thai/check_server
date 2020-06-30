@@ -1,0 +1,33 @@
+name: check server
+on:
+  # do at 00:00 everyday
+  schedule:
+    - cron: '0 * * * *'
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    # browser + cypress image
+    container:
+      image: cypress/included:4.9.0
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@master
+        with:
+          ref: 'master'
+      - name: run test
+        env:
+          CHECK_URL: ${{ secrets.CHECK_URL }}
+          CHECK_TITLE: ${{ secrets.CHECK_TITLE }}
+          CHECK_CSS_ELEMENT: ${{ secrets.CHECK_CSS_ELEMENT }}
+        run: npx cypress run --browser chrome
+
+      # screenshot of failure
+      # do only when the previous step of a job failed
+      - name: get screenshot on failure
+        uses: actions/upload-artifact@v2
+        if: failure()
+        with:
+          name: check-failure-screenshots
+          path: check/screenshots
