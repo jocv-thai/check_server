@@ -17,9 +17,9 @@ jobs:
           ref: 'master'
       - name: run test
         env:
-          CHECK_URL: ${{ secrets.CHECK_URL }}
-          CHECK_TITLE: ${{ secrets.CHECK_TITLE }}
-          CHECK_CSS_ELEMENT: ${{ secrets.CHECK_CSS_ELEMENT }}
+          CYPRESS_CHECK_URL: ${{ secrets.CHECK_URL }}
+          CYPRESS_CHECK_TITLE: ${{ secrets.CHECK_TITLE }}
+          CYPRESS_CHECK_CSS_ELEMENT: ${{ secrets.CHECK_CSS_ELEMENT }}
         run: npx cypress run --browser chrome
       # screenshot of failure
       # do only when the previous step of a job failed
