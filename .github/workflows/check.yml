@@ -10,7 +10,6 @@ jobs:
     # browser + cypress image
     container:
       image: cypress/included:4.9.0
-
     steps:
       - name: checkout
         uses: actions/checkout@master
@@ -22,7 +21,6 @@ jobs:
           CHECK_TITLE: ${{ secrets.CHECK_TITLE }}
           CHECK_CSS_ELEMENT: ${{ secrets.CHECK_CSS_ELEMENT }}
         run: npx cypress run --browser chrome
-
       # screenshot of failure
       # do only when the previous step of a job failed
       - name: get screenshot on failure
@@ -31,3 +29,15 @@ jobs:
         with:
           name: check-failure-screenshots
           path: check/screenshots
+      # notify to Slack
+      - name: notify to slack
+        uses: homoluctus/slatify@master
+        if: always()
+        with:
+          type: ${{ job.status }}
+          job_name: 'check server'
+          mention: 'channel'
+          mention_if: 'failure'
+          channel: '#webhook-action'
+          icon_emoji: ':github:'
+          url: ${{ secrets.SLACK_WEBHOOK_URL }}
