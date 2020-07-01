@@ -28,7 +28,7 @@ jobs:
         if: failure()
         with:
           name: check-failure-screenshots
-          path: [cypress/screenshots, cypress/videos/]
+          path: cypress/[screenshots, videos]/
       # notify to Slack
       - name: notify to slack
         uses: homoluctus/slatify@master
