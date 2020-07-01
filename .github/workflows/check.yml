@@ -32,7 +32,7 @@ jobs:
       # notify to Slack
       - name: notify to slack
         uses: homoluctus/slatify@master
-        if: always()
+        if: always() && ${{ secrets.SLACK_WEBHOOK_URL }} != null
         with:
           type: ${{ job.status }}
           job_name: 'check server'
