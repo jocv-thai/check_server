@@ -29,13 +29,12 @@ jobs:
         with:
           name: check-failure-screenshots
           path: cypress/screenshots
-
       - name: get video on failure
         uses: actions/upload-artifact@v2
+        if: failure()
         with:
           name: check-failure-video
           path: cypress/videos
-
       # notify to Slack
       - name: notify to slack
         uses: homoluctus/slatify@master
