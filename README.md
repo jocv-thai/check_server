@@ -16,6 +16,7 @@
 | CHECK_TITLE  | Title for check (shown in titlebar of the browser) |
 | CHECK_CSS_ELEMENT  | Element for check (must be exist) |
 | SLACK_WEBHOOK_URL  | Slack Incoming Webhooks URL |
+| SLACK_WEBHOOK_CHANNEL | Slack Channel to post |
 
 #### To get Slack Incoming Webhooks URL
 See
@@ -23,10 +24,13 @@ https://api.slack.com/messaging/webhooks
 
 
 
-## How to test in local machine
+## How to check by cypress in local machine
 1. Install Node.js in your machine
-2. Change Environment Variable ("env") in cypress.json
-3. Do bellow at top of this project
+2. Clone this repository
+3. Change Environment Variable ("env") in cypress.json
+4. Execute bellow at top of this repository
 ```
 npx cypress run --browser chrome
 ```
+
+(Slack post is not supported)

@@ -44,6 +44,6 @@ jobs:
           job_name: 'check server'
           mention: 'channel'
           mention_if: 'failure'
-          channel: '#webhook-action'
+          channel: ${{ secrets.SLACK_WEBHOOK_CHANNEL }}
           icon_emoji: ':github:'
           url: ${{ secrets.SLACK_WEBHOOK_URL }}
