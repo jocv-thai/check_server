@@ -3,7 +3,7 @@
 ![check server](https://github.com/nomrand/check_server/workflows/check%20server/badge.svg)
 
 
-## How to check server
+## How to check server in GitHub Actions
 
 1. Fork this repository to your GitHub account
 2. Set Secrets below
@@ -22,4 +22,11 @@ See
 https://api.slack.com/messaging/webhooks
 
 
-3. 
+
+## How to test in local machine
+1. Install Node.js in your machine
+2. Change Environment Variable ("env") in cypress.json
+3. Do bellow at top of this project
+```
+npx cypress run --browser chrome
+```
