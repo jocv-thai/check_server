@@ -1,3 +1,8 @@
 {
-    "defaultCommandTimeout": 10000
+    "defaultCommandTimeout": 10000,
+    "env": {
+        "CHECK_URL": "http://127.0.0.1:8000/",
+        "CHECK_TITLE": "Title for Test page",
+        "CHECK_CSS_ELEMENT": "document"
+    }
 }

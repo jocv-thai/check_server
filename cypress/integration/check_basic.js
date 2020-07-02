@@ -3,7 +3,7 @@ describe('Check Basic', function() {
         // open
         cy.visit(Cypress.env('CHECK_URL'))
         // check title
-        cy.title().should(Cypress.env('CHECK_TITLE'))
+        cy.title().should('eq', Cypress.env('CHECK_TITLE'))
         // check css element
         cy.get(Cypress.env('CHECK_CSS_ELEMENT')).should('be.visible')
     })
