@@ -6,7 +6,7 @@
 ## How to check server in GitHub Actions
 
 1. Fork this repository to your GitHub account
-2. Enable Actions (Click [Actions] tab)
+2. Enable Actions (Click [Actions] tab > Enable) & Commit something to check.yml
 3. Set Secrets below
 
    [Settings] > [Secrets] > [New secret]

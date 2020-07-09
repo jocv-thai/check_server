@@ -54,4 +54,4 @@ jobs:
         if: failure()
         with:
           access_token: ${{ secrets.LINE_ACCESS_TOKEN }}
-          message: '[ERROR]\nSomething wrong with ${{ secrets.CHECK_URL }} !'
+          message: '[ERROR]Something wrong with ${{ secrets.CHECK_URL }} !'
