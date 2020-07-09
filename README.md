@@ -17,6 +17,8 @@
 | CHECK_CSS_ELEMENT  | Element for check (must be exist) |
 | SLACK_WEBHOOK_URL  | Slack Incoming Webhooks URL |
 | SLACK_WEBHOOK_CHANNEL | Slack Channel to post |
+| LINE_ACCESS_TOKEN | Line Notify Access Token |
+
 
 #### To get Slack Incoming Webhooks URL
 See
