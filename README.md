@@ -6,7 +6,8 @@
 ## How to check server in GitHub Actions
 
 1. Fork this repository to your GitHub account
-2. Set Secrets below
+2. Enable Actions (Click [Actions] tab)
+3. Set Secrets below
 
    [Settings] > [Secrets] > [New secret]
 
@@ -35,4 +36,4 @@ https://api.slack.com/messaging/webhooks
 npx cypress run --browser chrome
 ```
 
-(Slack post is not supported)
+(Slack & Line post is not supported)

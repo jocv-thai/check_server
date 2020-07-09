@@ -1,6 +1,6 @@
 name: check server
 on:
-  # do at 00:00 everyday
+  # do at every xx:00
   schedule:
     - cron: '0 * * * *'
 
@@ -38,7 +38,7 @@ jobs:
       # notify to Slack
       - name: notify to slack
         uses: homoluctus/slatify@master
-        if: always()
+        if: failure()
         with:
           type: ${{ job.status }}
           job_name: 'check server'
@@ -51,7 +51,7 @@ jobs:
       # notify to Line
       - name: notify to Line
         uses: snow-actions/line-notify@v1.0.0
-        if: always()
+        if: failure()
         with:
           access_token: ${{ secrets.LINE_ACCESS_TOKEN }}
-          message: ${{ job.status }}
+          message: '[ERROR]\nSomething wrong with ${{ secrets.CHECK_URL }} !'
