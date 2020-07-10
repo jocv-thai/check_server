@@ -4,6 +4,10 @@ on:
   schedule:
     - cron: '0 * * * *'
 
+env:
+  IsSlackNotify: ${{ secrets.SLACK_WEBHOOK_CHANNEL }}${{ secrets.SLACK_WEBHOOK_URL }}
+  IsLineNotify: ${{ secrets.LINE_ACCESS_TOKEN }}
+
 jobs:
   check:
     runs-on: ubuntu-latest
@@ -38,7 +42,7 @@ jobs:
       # notify to Slack
       - name: notify to slack
         uses: homoluctus/slatify@master
-        if: ${{ secrets.SLACK_WEBHOOK_URL != '' && failure() }}
+        if: ${{ env.IsSlackNotify != '' && failure() }}
         with:
           type: ${{ job.status }}
           job_name: 'check server'
@@ -51,7 +55,7 @@ jobs:
       # notify to Line
       - name: notify to Line
         uses: snow-actions/line-notify@v1.0.0
-        if: ${{ secrets.LINE_ACCESS_TOKEN != '' && failure() }}
+        if: ${{ env.IsLineNotify != '' && failure() }}
         with:
           access_token: ${{ secrets.LINE_ACCESS_TOKEN }}
           message: '[ERROR]Something wrong with ${{ secrets.CHECK_URL }} !'
