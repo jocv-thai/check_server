@@ -51,7 +51,7 @@ jobs:
       # notify to Line
       - name: notify to Line
         uses: snow-actions/line-notify@v1.0.0
-        if: ${{ secrets.LINE_ACCESS_TOKEN == '' && failure() }}
+        if: ${{ secrets.LINE_ACCESS_TOKEN != '' && failure() }}
         with:
           access_token: ${{ secrets.LINE_ACCESS_TOKEN }}
           message: '[ERROR]Something wrong with ${{ secrets.CHECK_URL }} !'
