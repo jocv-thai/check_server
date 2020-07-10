@@ -53,7 +53,6 @@ jobs:
           channel: ${{ secrets.SLACK_WEBHOOK_CHANNEL }}
           icon_emoji: ':github:'
           url: ${{ secrets.SLACK_WEBHOOK_URL }}
-          name: LINE Notify example
       # notify to Line
       - name: notify to Line
         uses: snow-actions/line-notify@v1.0.0
