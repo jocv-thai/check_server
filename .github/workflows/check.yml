@@ -1,5 +1,7 @@
 name: check server
 on:
+  # do manually
+  workflow_dispatch:
   # do at every xx:00
   schedule:
     - cron: '0 * * * *'
