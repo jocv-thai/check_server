@@ -41,6 +41,7 @@ jobs:
         with:
           name: check-failure-video
           path: cypress/videos
+
       # notify to Slack
       - name: notify to slack
         uses: homoluctus/slatify@master
@@ -53,6 +54,7 @@ jobs:
           channel: ${{ secrets.SLACK_WEBHOOK_CHANNEL }}
           icon_emoji: ':github:'
           url: ${{ secrets.SLACK_WEBHOOK_URL }}
+
       # notify to Line
       - name: notify to Line
         uses: snow-actions/line-notify@v1.0.0
