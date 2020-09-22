@@ -2,9 +2,9 @@ name: check server
 on:
   # do manually
   workflow_dispatch:
-  # do at every xx:00
+  # do at every 03:00 (10:00 in thai)
   schedule:
-    - cron: '0 * * * *'
+    - cron: '0 3 * * *'
 
 env:
   IsSlackNotify: ${{ secrets.SLACK_WEBHOOK_CHANNEL }}${{ secrets.SLACK_WEBHOOK_URL }}
