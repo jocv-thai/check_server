@@ -1,6 +1,6 @@
 # check_server
 
-![check server](https://github.com/nomrand/check_server/workflows/check%20server/badge.svg)
+![check server](https://github.com/jocv-thai/check_server/workflows/check%20server/badge.svg)
 
 
 ## How to check server in GitHub Actions
